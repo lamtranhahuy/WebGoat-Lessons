@@ -198,6 +198,10 @@ public class RoleBasedAccessControl extends GoatHillsFinancial
 
     public void handleRequest(WebSession s)
     {
+        If(!isAuthorized(s, userId, requestedActionname)
+        {
+            throw new UnauthorizedException();
+        }
         // Here is where dispatching to the various action handlers happens.
         // It would be a good place verify authorization to use an action.
 
